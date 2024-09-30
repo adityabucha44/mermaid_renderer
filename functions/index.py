@@ -4,6 +4,21 @@ import subprocess, os
 
 app = Flask(__name__)
 
+
+@app.route("/")
+def home():
+    return """<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div>
+          <h1>mermaid</h1>
+          <p>welcome</p>
+      </div>
+    </body>
+</html>"""
+
+
 @app.route('/generate', methods=['POST'])
 def generate():
     data = request.json
